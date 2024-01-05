@@ -4,6 +4,17 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  let i=0,j=str.length-1;
+  while(i<j){
+    while(str[i].charCodeAt(0)<97 || str[i].charCodeAt(0)>122) i++;
+    while(str[j].charCodeAt(0)<97 || str[j].charCodeAt(0)>122) j--;
+    if(str[i]!==str[j]){
+      return false;
+    }
+    i++;
+    j--;
+  }
   return true;
 }
 
