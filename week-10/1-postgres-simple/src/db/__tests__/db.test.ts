@@ -70,8 +70,8 @@ describe('Todo Operations', () => {
       // Assuming there are already todos created in previous tests
       const todos = await getTodos(userId);
   
-      expect(todos.length).toBeGreaterThan(0);
-      todos.forEach(todo => {
+      expect(todos?.length).toBeGreaterThan(0);
+      todos?.forEach((todo: { user_id: any; }) => {
         expect(todo).toHaveProperty('id');
         expect(todo.user_id).toEqual(userId);
       });
